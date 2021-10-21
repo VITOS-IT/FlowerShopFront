@@ -1,0 +1,23 @@
+<div class="section">
+    <h2>Cart</h2>
+    <div *ngFor="let item of cartItems" class="item">
+        <div *ngIf="item.quantity>0">
+            <div class="col-sm-5">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Bouquet : {{item.name}}</h5>
+                    <p class="card-text">Description : {{item.description}}</p>
+                    <p class="card-text">Price : {{item.price}}</p>
+                    <p class="card-text">Quantity : {{item.quantity}}</p>
+                    <button (click)="removeItem(item)" class="btn btn-primary">Remove from cart</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+      <h3>Total price {{total}}</h3>
+    </div>
+</div>
+
+ 

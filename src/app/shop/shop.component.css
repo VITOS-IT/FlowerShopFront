@@ -1,0 +1,13 @@
+.section{
+    width: 80%;
+    margin: auto;
+    }
+h2{
+    padding-left: 20px;
+}
+.card{
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}

@@ -1,0 +1,15 @@
+<div class="alert alert-succes">
+    <p>Login user</p>
+    <form [formGroup]="myForm" (ngSubmit)="login()">
+        <label class="form-control">User ID</label>
+        <input type="text" class="form-control" [formControl]="uid">
+        <span *ngIf="uid.valid==false && uid.touched" class="alert alert-danger">
+            UserId cannot be empty</span>
+        <label class="form-control">Password</label>
+        <input type="text" class="form-control" [formControl]="pass">
+        <span *ngIf="pass.valid==false&&pass.touched" class="alert alert-danger">
+            Password cannot be empty</span>
+        
+        <button class="btn btn-success">Login</button>
+    </form>
+</div>

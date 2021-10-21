@@ -1,0 +1,23 @@
+
+<div class="alert alert-succes">
+    <p>Registration new user</p>
+    <form [formGroup]="myForm" (ngSubmit)="register()">
+        <label class="form-control">User ID</label>
+        <input type="text" class="form-control" [formControl]="uid">
+        <span *ngIf="uid.valid==false && uid.touched" class="alert alert-danger">
+            UserId cannot be empty</span>
+        <label class="form-control">Password</label>
+        <input type="text" class="form-control" [formControl]="pass">
+        <span *ngIf="pass.valid==false&&pass.touched" class="alert alert-danger">
+            Password cannot be empty</span>
+        <label class="form-control">Re-type Password</label>
+        <input type="password" class="form-control">
+        <label class="form-control">User Name</label>
+        <input type="text" class="form-control" [formControl]="uname">
+        <span *ngIf="uname.valid==false&&uname.touched" class="alert alert-danger">
+            <span *ngIf=uname.errors.required>Username cannot be empty</span>
+            <span *ngIf=uname.errors.minlength>Invalid entry for name</span>
+        </span>
+        <button class="btn btn-success">Register</button>
+    </form>
+</div>

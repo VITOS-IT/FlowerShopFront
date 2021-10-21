@@ -1,0 +1,31 @@
+<div class="alert alert-succes">
+    <p>Add new Bouquet</p>
+    <form [formGroup]="myForm" (ngSubmit)="addToShop()">
+        <label class="form-control">Bouquet ID</label>
+        <input type="text" class="form-control" [formControl]="bid">
+        <span *ngIf="bid.valid==false && bid.touched" class="alert alert-danger">
+            BouquetId cannot be empty</span>
+
+        <label class="form-control">Bouquet Name</label>
+        <input type="text" class="form-control" [formControl]="bname">
+        <span *ngIf="bname.valid==false&&bname.touched" class="alert alert-danger">
+            Name cannot be empty</span>
+
+        <label class="form-control">Bouquet Price</label>
+        <input type="text" class="form-control" [formControl]="bprice">
+        <span *ngIf="bprice.valid==false&&bprice.touched" class="alert alert-danger">
+            Price cannot be empty</span>
+
+        <label class="form-control">Bouquet Quantity</label>
+        <input type="text" class="form-control" [formControl]="bquantity">
+        <span *ngIf="bquantity.valid==false&&bquantity.touched" class="alert alert-danger">
+            Quantity cannot be empty</span>
+
+        <label class="form-control">Bouquet Description</label>
+        <input type="text" class="form-control" [formControl]="des">
+        <span *ngIf="des.valid==false&&des.touched" class="alert alert-danger">
+            Quantity cannot be empty</span>
+
+        <button class="btn btn-success btn-block" >Add</button>
+    </form>
+</div>
