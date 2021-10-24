@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
         var user:User = data as User;
         //console.log(user.jwtToken);
     
-
+        localStorage.setItem("userId",user.id)
         localStorage.setItem("token",user.jwtToken)
         console.log("register");
        this.router.navigate(["shop"])

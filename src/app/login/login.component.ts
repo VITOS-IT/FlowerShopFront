@@ -45,6 +45,8 @@ export class LoginComponent implements OnInit {
         var user:User = data as User;
         console.log(user.jwtToken);
         localStorage.setItem("token",user.jwtToken)
+        localStorage.setItem("userId",user.id)
+
         console.log("Login");
        this.router.navigate(["shop"])
       });  

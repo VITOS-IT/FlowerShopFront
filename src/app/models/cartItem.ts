@@ -1,4 +1,4 @@
-export class Bouquet{
+export class CartBouquet{
     id:number=0
     userId:string=""
     name:string=""

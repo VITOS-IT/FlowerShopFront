@@ -12,14 +12,14 @@ export class CartService {
   addNewBouquetAPI(bouqet: Bouquet) {
        return this.httpClient.post("http://localhost:37662/api/Cart", bouqet,{headers:this.getHeaders()})
   }
-  getAllBouquetAPI() {
-      return this.httpClient.get("http://localhost:37662/api/Cart",{headers:this.getHeaders()})
+  getAllBouquetAPI(userId:string) {
+      return this.httpClient.get("http://localhost:37662/api/Cart/"+userId,{headers:this.getHeaders()})
   }
-  getBouquetIdAPI(id: string) {
-       return this.httpClient.get("http://localhost:37662/api/Cart/"+id,{headers:this.getHeaders()})
+  getBouquetIdAPI(id: string, userId:string) {
+       return this.httpClient.get("http://localhost:37662/api/Cart/"+userId+"/"+id,{headers:this.getHeaders()})
   }
-  updateBouquetAPI(bouqet: Bouquet, id:string) {
-      return this.httpClient.put("http://localhost:37662/api/Cart/"+id, bouqet,{headers:this.getHeaders()})
+  updateBouquetAPI(bouqet: Bouquet, id:string, userId:string) {
+      return this.httpClient.put("http://localhost:37662/api/Cart/"+userId+"/"+id, bouqet,{headers:this.getHeaders()})
   }
   private getHeaders(){
     var header = new HttpHeaders({
